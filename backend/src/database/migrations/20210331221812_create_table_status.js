@@ -3,7 +3,7 @@ exports.up = function(knex) {
   
     return knex.schema.createTable('status',function(table){
         table.string('id').primary();
-        table.string('description').notNullable();
+        table.string('title').notNullable();
     });
 };
 

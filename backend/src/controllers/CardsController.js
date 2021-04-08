@@ -7,10 +7,10 @@ module.exports = {
       const [count] = await connection('cards').count();
 
       const cards = await connection('cards')
-        .join('status','status.id','=','cards.status_id')
+        .join('status','cards.status_id','=','status.id')
         .select([
           'cards.*',
-          'status.description',
+          'status.title'
         ]);
 
       response.header('X-Total-Count',count['count(*)'])
